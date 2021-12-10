@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+<head>
+    <title>Curso</title>
+    <link href="/estilos/eventos.css" rel="stylesheet">
+</head>
+<body>
+  
+     <section layout:fragment="content">
+
+        <div class="container">
+            <div class="card">
+              <img src="/imagens/brasao informatica.png" class="card-img-top" alt="Brasão do curso informática">
+              <div class="card-body">
+                <h5 class="card-title">Informática</h5>
+                <p class="card-text">O Curso Técnico Integrado em Informática forma profissionais que desenvolvem programas de computador, seguindo as especificações e paradigmas da lógica de programação e das linguagens de programação; utilizam ambientes de desenvolvimentos de sistemas, sistemas operacionais e banco de dados; realizam testes de software, mantendo registro que possibilitem análises e refinamento dos resultados; executam manutenção de programas de computadores implantados. Possibilidades de atuação: Instituições públicas, privadas e do terceiro setor que demandem sistemas computacionais, especialmente envolvendo programação de computadores.</p>
+                <a th:href="@{/curso/materias}" class="btn btn-primary">Ver matérias</a>
+              </div>
+            </div>
+        </div>
+	</section>
+
+<!-- O JS fica aqui para otimizar o carregamento da página.-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>    
+
+</body>
+</html>
+

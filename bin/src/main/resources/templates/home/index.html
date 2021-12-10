@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>iCalouro</title>
+    <!-- Importações CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="/estilos/index.css" rel="stylesheet">
+    <link href="/estilos/carousel.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav id="menu" class="navbar navbar-expand-lg navbar-light fixed-top">
+           <a class="navbar-brand" href="/">
+          <img id="logo" src="imagens/logo.png" width="90" height="50" class="d-inline-block align-top" alt="Logo">
+           <span id="marca">iCalouro</span>
+           </a>
+
+           <!-- Barra de navegação -->
+           <div id="listaMenu">
+           <ul class="nav">
+            <li class="nav-item ">
+              <a class="nav-link text-light" th:href="@{usuario/cadastro}">Cadastrar Aluno</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" th:href="@{usuario/login}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" th:href="@{forum/forum}">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" th:href="@{curso/informatica}">Curso</a>
+            </li>  
+            <li class="nav-item dropdown">
+              <a class="nav-link text-light dropdown-toggle" href="eventos.html" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Eventos</a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" th:href="@{eventos/semadec}">Semadec</a></li>
+                <li><a class="dropdown-item" th:href="@{eventos/expotec}">Expotec</a></li>
+                <li><a class="dropdown-item" th:href="@{eventos/codegirl}">Code Girl</a></li>
+              </ul>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Sobre</a>
+            </li>
+          </ul>
+        </div>
+          </nav>
+    </div>
+
+    <!-- Carrossel de imagens do IFRN -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imagens/ifrn1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="imagens/ifrn2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="imagens/ifrn3.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+          
+         
+       <!-- Rodapé da página -->
+      <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-white" style="background-color: #0a4275;">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: CTA -->
+            <section class="">
+              <p class="d-flex justify-content-center align-items-center">
+                <a href="cadastro.html"class="btn btn-outline-light btn-rounded me-2">Registrar-se</a>
+                <a href="login.html" type="button" class="btn btn-outline-light btn-rounded">
+                  Login
+                </a>
+              </p>
+            </section>
+            <!-- Section: CTA -->
+          </div>
+          <!-- Grid container -->
+      
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white" href="#">iCalouro</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </section>
+
+<!-- O JS fica aqui para otimizar o carregamento da página.-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>    
+
+</body>
+</html>
+
