@@ -2,7 +2,7 @@
 
 
 1. Instalar Java 11
-2. Instalar a ferramenta Spring
+2. Baixar o programa Spring Tool Suite
 3. Instalar a ferramenta Git
 
 4. Instalar e Configurar o Banco de Dados MySQL 8
