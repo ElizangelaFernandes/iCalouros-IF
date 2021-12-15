@@ -13,10 +13,10 @@ git clone https://github.com/ElizangelaFernandes/iCalouros-IF.git
 
  
 
-6. Após clonar o repositório, abrir a ferramenta Spring selecionando um Worckspace
+6. Após clonar o repositório, abrir a ferramenta Spring selecionando um Workspace
 7. Abra o diretório do projeto no worckspace
 8. Alterar a senha do usuário ROOT da conexão com o Banco de dados no arquivo aplication.propriertis
 
-9. Der start no servidor do Spring
+9. Inicializar no servidor do Spring
 10. Abra o navegador
 11. Acesse a URL: localhost:8080/
