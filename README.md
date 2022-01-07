@@ -1,4 +1,4 @@
-## iCalouros-IF
+# iCalouros-IF
 1. Instalar Java 11
 
 2. Baixar o programa Spring Tool Suite
