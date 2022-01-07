@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+    <head>
+        <title>iCalouro - Matérias</title>
+    </head>
+    <body>
+        <!--Formulario de cadastro -->
+        <section layout:fragment="content">
+        
+          <div th:replace="fragments/mensagens"></div>
+          
+         
+            <form id="formulario" th:action="@{/cursos/materias/salvar}" th:object="${materia}" method="post" style="margin-top: 15px;">
+                <h4 class="text-center">Adicionar uma matéria</h4>
+
+        	 <div th:if="${#fields.hasAnyErrors()}" class="alert alert-danger">
+             	<ul>
+                	<li th:each="error : ${#fields.detailedErrors()}">
+                    	<b th:text="${error.message}" style="color: red;"></b>
+                    </li>
+              	</ul>
+              </div>
+              
+                <input type="hidden" th:field="${materia.id}" />
+
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" id="name" th:field="${materia.nome}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Carga horária (Ex.: 60h)</label>
+                    <textarea id="cargaHoraria" class="form-control" th:field="${materia.cargaHoraria}"></textarea>
+                </div>       
+                
+                 <input type="hidden" th:field="${materia.curso.id}" />
+                  
+         
+                <button id="btn-submit" type="submit" class="btn btn-success" th:value="Salvar">Salvar</button>
+            
+            </form>
+            
+            
+        </section>
+    </body>
+</html>

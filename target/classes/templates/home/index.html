@@ -1,54 +1,26 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
-<head>
-    <title>iCalouro</title>
-    <!-- Importação do CSS -->
-    <link href="/estilos/carousel.css" rel="stylesheet">
-</head>
-<body>
-  <section layout:fragment="content">
-	
-    <!-- Carrossel de imagens do IFRN -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="imagens/ifrn1.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="imagens/ifrn2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="imagens/ifrn3.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-      </div>
-          
-         
-       <!-- Rodapé da página -->
-      <section>
-        <!-- Footer -->
-        <footer class="text-center text-white" style="background-color: #0a4275;">
-          <!-- Grid container -->
-          <div class="container p-4 pb-0">
-   
-            <!-- Section: CTA -->
-          </div>
-          <!-- Grid container -->
-      
-          <!-- Copyright -->
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2021 Copyright:
-            <a class="text-white" href="#">iCalouro</a>
-          </div>
-          <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
-      </section>
-</section>
-<!-- O JS fica aqui para otimizar o carregamento da página.-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>    
-
-</body>
+    <head>
+        <title>iCalouro</title>
+        <link href="/estilos/carousel.css" rel="stylesheet" />
+    </head>
+    <body>
+        <section layout:fragment="content">
+            <!-- Carrossel de imagens do IFRN -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagens/ifrn1.png" class="d-block w-100" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagens/ifrn2.jpg" class="d-block w-100" alt="..." />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagens/ifrn3.jpg" class="d-block w-100" alt="..." />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
-

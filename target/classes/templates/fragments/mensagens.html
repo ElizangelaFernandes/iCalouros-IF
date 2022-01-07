@@ -1,17 +1,14 @@
 <!-- Página de mensagens para uso de modularização -->
 
 <!-- Mensagem de sucesso -->
-
 <div th:if="${msgSucesso} != null">
-    <b class="text-warning" th:text="${msgSucesso}"></b>
+	<p class="alert alert-success text-center" role="alert" th:text="${msgSucesso}"></p>
 </div>
+
 <!-- Mensagens de erro -->
-
-
-<div class="alert alert-danger" th:if="${msgErro} != null">
- <p th:text="${msgErro}"></p> 
+<div th:if="${msgErro} != null">
+	<p class="alert alert-danger text-center" role="alert" th:text="${msgErro}"></p>
 </div>
-
 
 <div class="alert alert-danger" th:if="${msgsErro} != null">
     <ul>

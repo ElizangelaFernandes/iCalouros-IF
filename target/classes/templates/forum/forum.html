@@ -11,114 +11,95 @@
  <section layout:fragment="content">
         <div class="container">
 
-               
-            <h2 class="h4 bg-primary mb-0 p-4 rounded-top text-white" text-white>Fórum de duvidas
-            </h2>
-            
-            
-            
-            
-            
-
-
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		  
-		    <div class="modal-content">
-		    
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Nova pergunta</h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		      </div>
-		      
-		      <div class="modal-body">
-		      
-		        <form id="formPergunta" method="post" th:action="@{/forum/salvar}" th:object="${postagem}">
-		        	<input type="hidden" th:field="${postagem.id}">
-		          <div class="mb-3">
-		            <label for="recipient-name" class="col-form-label">Titulo:</label>
-		            <input type="text" class="form-control" id="recipient-name" th:field="${postagem.titulo}">
-		          </div>
-		          <div class="mb-3">
-		            <label for="message-text" class="col-form-label">Descricao:</label>
-		            <textarea class="form-control" id="message-text" th:field="${postagem.conteudo}"></textarea>
-		          </div>
-		        </form >
-		        
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-		        <button type="button" class="btn btn-primary" onclick="document.getElementById('formPergunta').submit();">Salvar</button>
-		      </div>
-		      
-		    </div>
-		    
-		  </div>
-		</div>
-            
+            <h2 class="h4 bg-primary mb-0 p-4 rounded-top text-white" text-white>Fórum de duvidas</h2>
             
             <table class="table table-striped table-bordered table-responsive mb-xl-0">
               <thead class="thead-light">
-                  <tr>
-                    <th scope="col" class="forum-col" style="margin-right: 500px;">
-                    			Postagens
-                    <button style="position: absolute; left: 83.8%; bottom: 66.8%;"  type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Perguntar</button>
-                    </th>
+                  <tr >
+                    <th scope="col" class="forum-col">Postagens</th>
                   </tr>
               </thead>
               
               <tbody>
-    			 <tr th:each="postagem : ${postagens}">
-    			 
-                  	<td>
-	                    <h3 class="h5 mb-0">
-	                    	<a href="#" data-bs-toggle="modal" th:data-bs-target="'#p' + ${postagem.id}" th:text="${postagem.titulo}"></a>
-	                    </h3>
-	                    <p class="mb-0" th:text="${postagem.conteudo}"></p>
-	                    <p><strong>R: </strong><span class="mb-0" th:text="${postagem.resposta}"></span></p>
-	                    
-                    </td>
-                    
-		       <div class="modal fade" th:id="p + ${postagem.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-					  <div class="modal-dialog">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <h5 class="modal-title" id="staticBackdropLabel" th:text="${postagem.titulo}"></h5>
-					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					      </div>
-					    	  <div class="modal-body">
-					    	  
-					    	  <form th:id="formResposta + ${postagem.id}" method="get" th:action="@{/forum/salvar}">
-		        				<input name="id" type="hidden" th:value="${postagem.id}">
-			          
-					          <div class="mb-3">
-					            <label for="message-text" class="col-form-label">Resposta:</label>
-					            <textarea name="resposta" class="form-control" id="message-text" th:text="${postagem.resposta}"></textarea>
-					          </div>
-					       
-					   
-					      </div>
-					      <div class="modal-footer">
-					        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-					      </div>
-					      
-					       </form >
-					    </div>
-					  </div>
-			     </div>
-                   
-                   
-                   
-                   
-                 </tr>
+                  
+                <tr>
+                  <td>
+                    <h3 class="h5 mb-0"><a href="#" data-bs-toggle="modal" data-bs-target="#p1">Como mudar a senha no suap?</a></h3>
+                    <p class="mb-0">Queria trocar minha senha mas não sei como proceder.</p>
+                  </td>
+                </tr>
+                
+       			<tr>
+                 <td>
+                  <h3 class="h5 mb-0"><a href="#" data-bs-toggle="modal" data-bs-target="#p2">Como acesso o eduroam no computador?</a></h3>
+                  <p class="mb-0">Consegui acessar no celular, mas não no computador. Me ajudem</p>
+                 </td>
+                </tr>
+        
+        		<tr>
+                 <td>
+                  <h3 class="h5 mb-0"><a href="#" data-bs-toggle="modal" data-bs-target="#p3">Quais são os pesos da média ponderada que o IF usa?</a></h3>
+                  <p class="mb-0">Me falaram que alguns professores usam média ponderada em algumas notas, quais seriam os pesos?</p>
+                 </td>
+                </tr>
+
               </tbody>
-              
             </table>
 
         </div>
         
        
-		
+		<!-- Modais das respostas -->
+		<div class="modal fade" id="p1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="staticBackdropLabel">Como mudar a senha no suap?</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        	Acesse o site e procure por "esqueceu ou deseja alterar sua senha?".
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+	
+	<div class="modal fade" id="p2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="staticBackdropLabel">Como acesso o eduroam no computador?</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        Use sua matrícula.
+		      </div>
+		      <div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>       
+    
+    <div class="modal fade" id="p3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="staticBackdropLabel">Quais são os pesos da média ponderada que o IF usa?</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        1º e 2º bimestres: 2 e 3º e 4º: 3.
+		      </div>
+		      <div class="modal-footer">
+		     	<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>    
 	</section>
 
 <!-- O JS fica aqui para otimizar o carregamento da página.-->

@@ -1,19 +1,12 @@
 package br.edu.ifrn.icalouro.dominio;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
 
 /** Esta classe contém os atributos e métodos de um usuário.*/
 @Entity
@@ -26,6 +19,9 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	
+	/** parte do codigo onde definimos a obrigatoriedade do campo e 
+	 * quantidade de caracteres que deve ser ultilizada em cada atributo
+	 * @author bianca*/
 	@NotBlank(message = "O campo nome é obrigatório.")
 	@Size(min = 2, message = "Um nome deve ter pelo menos dois caracteres.")
 	private String nome;
@@ -45,10 +41,7 @@ public class Usuario {
 	
 	@Column(nullable = false)
 	private String perfil = USUARIO_COMUM;
-	
-	@OneToMany
-	private List<Postagem> postagens;
-	
+		
 	public int getId() {
 		return id;
 	}
@@ -92,12 +85,6 @@ public class Usuario {
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
-	}
-	public List<Postagem> getPostagens() {
-		return postagens;
-	}
-	public void setPostagens(List<Postagem> postagens) {
-		this.postagens = postagens;
 	}
 	
 	@Override

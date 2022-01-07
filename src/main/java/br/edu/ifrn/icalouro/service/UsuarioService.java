@@ -7,20 +7,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
 import br.edu.ifrn.icalouro.dominio.Usuario;
 import br.edu.ifrn.icalouro.repository.UsuarioRepository;
 
 
 
-/** Esta classe é a responsável por prestar um serviço para o sistema de login.*/
+/** Esta classe é a responsável por fornecer um serviço ao login.*/
 @Service
 public class UsuarioService implements UserDetailsService {
 
   @Autowired
   private UsuarioRepository usuarioRepository;
 
-  /** Este método verifica se os dados fornecidos no formulário de login batem com os de algum usuário inserido no banco de dados.*/
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     Usuario usuario = usuarioRepository.findByEmail(username)

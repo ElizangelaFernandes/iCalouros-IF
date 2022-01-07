@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+    <head>
+        <title>iCalouro - Adicionar Cursos</title>
+    </head>
+    <body>
+        <!--Formulario de cadastro -->
+        <section layout:fragment="content">
+        
+        <div th:replace="fragments/mensagens"></div>
+          
+         
+            <form id="formulario" th:action="@{/cursos/salvar}" th:object="${curso}" method="post" style="margin-top: 15px;"
+            enctype="multipart/form-data">
+                <h4 class="text-center">Adicionar um Curso</h4>
+
+        	 <div th:if="${#fields.hasAnyErrors()}" class="alert alert-danger">
+             	<ul>
+                	<li th:each="error : ${#fields.detailedErrors()}">
+                    	<b th:text="${error.message}" style="color: red;"></b>
+                    </li>
+              	</ul>
+              </div>
+              
+           <input type="hidden" th:field="${curso.id}" />
+
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" class="form-control"  th:field="${curso.nome}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" class="form-control" th:field="${curso.descricao}"></textarea>
+                </div>
+
+               <div class="input-group form-group">
+                                  <input type="file" th:name="file" class="form-control" />
+                   <input type="hidden" th:field="${curso.logoCurso.id}" />
+               </div>
+
+             
+                <button id="btn-submit" type="submit" class="btn btn-success" th:value="Salvar">Salvar</button>
+                
+            </form>
+            
+        </section>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+<head>
+    <title>Cursos Cadastrados</title>
+    <link href="/estilos/eventos.css" rel="stylesheet">
+</head>
+<body>
+	<section layout:fragment="content">
+    	<div class="container">
+    		
+    		
+    		   <div th:replace="fragments/mensagens"></div>
+    		
+    		<nav class="navbar navbar-light bg-light" style="display: flex; justify-content: space-between;">
+  				
+  				
+    				<form class="d-flex" method="get" th:action="@{/cursos/buscar}">
+      					<input name="nome" class="form-control me-2" type="search" placeholder="Curso" aria-label="Search">
+      					<button class="btn btn-primary" type="submit" th:action="@{/cursos/buscar}">Buscar</button>
+    				</form>
+    				
+    				<div> 
+	    				<a id="btnGroupDrop1" class="btn btn-primary" th:href="@{/cursos/adicionar}">Adicionar</a>
+	    				<a id="btnGroupDrop1" class="btn btn-primary" th:href="@{/cursos/gerarRelacaoCursos}">Relação de Cursos</a>
+    				</div> 
+  					
+			</nav>	
+			
+        	<div th:each="curso : ${cursos}"> 
+	       		<div class="card">
+	      		
+                    <img th:if="${curso.logoCurso != null}" th:src="@{/download/} + ${curso.logoCurso.id} + '?salvar=false'" class="card-img-top"/>
+	        	
+	                <div class="card-body">
+	               		<h5 class="card-title" th:text="${curso.nome}"></h5>
+	                	<p class="card-text" th:text="${curso.descricao}"></p>
+	                	<a th:href="@{/cursos/materias/} + ${curso.id}" class="btn btn-primary">Ver matérias</a>
+	                	
+	                	
+	                  <div class="btn-group" role="group">
+					    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+					     Ação
+					    </button>
+					    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+					      <li><a class="dropdown-item" th:href="@{/cursos/editar/} + ${curso.id}" >Editar</a></li>
+					      <li><a class="dropdown-item" th:href="@{/cursos/remover/} + ${curso.id}">Remover</a></li>
+					    </ul>
+					  </div>
+	                	
+	                	
+	               
+	                	
+	            	</div>
+	        	</div>
+	    	</div>
+	    	
+    	</div>
+	</section>
+<!-- O JS fica aqui para otimizar o carregamento da página.-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>    
+</body>
+</html>
+
