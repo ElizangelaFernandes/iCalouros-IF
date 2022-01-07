@@ -10,6 +10,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.edu.ifrn.icalouro.service.UsuarioService;
 
+import br.edu.ifrn.icalouro.dominio.Usuario;
+
 /** Esta classe é responsável pela segurança do site, controlando o acesso às páginas e criptogrando as senhas.*/
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity

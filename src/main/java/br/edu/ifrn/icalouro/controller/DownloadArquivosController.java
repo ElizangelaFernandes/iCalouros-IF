@@ -1,5 +1,7 @@
 package br.edu.ifrn.icalouro.controller;
 
+import javax.persistence.Access;
+import javax.servlet.http.HttpSession;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
